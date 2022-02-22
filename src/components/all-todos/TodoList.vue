@@ -5,7 +5,7 @@
       <div class="col col-xl-10">
         <div class="card">
           <div class="card-body p-5">
-            <creat-todo-list @create-todo="createTodo" :todos="todos" />
+            <creat-todo-list @create-todo-done="getTodo" />
             <div class="tab-content" id="ex1-content">
               <div class="tab-pane fade show active" id="ex1-tabs-1" role="tabpanel" aria-labelledby="ex1-tab-1">
                   <div class="d-flex justify-content-between col-12" style="padding: 0vmin 10vmin">
@@ -52,9 +52,6 @@ export default {
     },
       data() {
       return{
-        title: "",
-        status: "",
-        due_on: "",
         todos: []
       }
     },
@@ -62,33 +59,21 @@ export default {
         todo: Array
     },
     mounted() {
-        axios.get(`https://gorest.co.in/public/v2/users/100/todos`)
+      this.getTodo()
+    },
+    methods: {
+      getTodo(){
+        const headers = {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+            Authorization: `Bearer 2c7c9f912de64d2f20d5f32900d25741f369f06a4f0b7b33657f46f9b928e792`
+        }
+        axios.get(`https://gorest.co.in/public/v2/users/100/todos`, {headers})
             .then((response) => {
                 console.log(response)
                 return this.todos = response.data
             })
-    },
-    methods: {
-    creatTodo(){
-        let data = {
-            title: this.title,
-            due_on: this.body,
-            status: this.status
-        }
-        const Headers = {
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
-            Authorization: `Bearer`
-        }
-        axios.post(`https://gorest.co.in/public/v2/users/100/todos`,{Headers}, data)
-            .then((response) => {
-                console.log(response.data)
-                return this.todos = [...this.todos, response.data]
-            })
-            this.$emit("create-todo", data)
-            
-    },
-    
+      },
      deleteTodo(id){
         this.todos = this.todos.filter((todo) => todo.id !== id);
     },

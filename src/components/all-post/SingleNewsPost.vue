@@ -1,4 +1,5 @@
 <template>
+<div :key="post.Id" v-for="post in posts" id="post-481" class="shadow-4 rounded-5 bg-white text-center mb-5 overflow-hidden mb-5 single-post">
     <div class="bg-image hover-overlay ripple w-100" data-ripple-color="light">
         <img src="https://mdbcdn.b-cdn.net/img/Marketing/campaigns/news/websites.webp" class="w-100" alt="Websites You Should Know">
         <a href="#/post-content" target="_blank">
@@ -10,16 +11,37 @@
         <p>{{post.body}} </p>
         <a class="btn btn-primary btn-rounded" href="#/post-content" role="button">Learn more</a>
     </div>
+</div>
 </template>
 <script>
-
+import axios from 'axios'
 export default {
     name: "SingleNewsPost",
     components: {
 
     },
+    data(){
+        return{
+        posts: []
+        }
+    },
     props: {
-        post: Object
+    },
+    mounted() {
+        this.getPost()
+    },
+    methods: {
+        getPost(){
+        const headers = {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+            Authorization: `Bearer 2c7c9f912de64d2f20d5f32900d25741f369f06a4f0b7b33657f46f9b928e792`
+        }
+        axios.get(`https://gorest.co.in/public/v2/users/100/posts`, {headers})
+        .then((response) => {
+            return this.posts = response.data
+        })
+    },
     }
 }
 </script>

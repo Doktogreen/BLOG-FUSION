@@ -43,7 +43,7 @@
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input type="password" id="form3Example4cd" class="form-control" />
+                      <input v-model="status" type="password" id="form3Example4cd" class="form-control" />
                       <label class="form-label" for="form3Example4cd">password</label>
                     </div>
                   </div>
@@ -101,6 +101,7 @@ export default {
       name: "",
       email:"",
       gender: "",
+      status: "active",
       user: []
     }
   },
@@ -108,23 +109,23 @@ export default {
     // msg: String,
   },
   methods: {
-      creatUser(){
+      createUser(){
         let data = {
             name: this.name,
             email: this.email,
-            gender: this.gender
+            gender: this.gender,
+            status: this.status
         }
         const headers = {
             Accept:"application/json",
              ContentType: "application/json",
-             Authorization: "Bearer ACCESS-TOKEN"
+             Authorization: "Bearer 2c7c9f912de64d2f20d5f32900d25741f369f06a4f0b7b33657f46f9b928e792"
         }
-        axios.post(`https://gorest.co.in/public/v2/users`, {headers}, data)
+        axios.post(`https://gorest.co.in/public/v2/users`, data, {headers})
             .then((response) => {
                 console.log(response.data)
                 return this.user = [...this.user, response.data]
             })
-            this.$emit(data)
     }
   }
 };

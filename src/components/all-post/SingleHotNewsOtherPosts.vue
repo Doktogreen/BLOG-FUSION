@@ -1,4 +1,5 @@
 <template>
+<div :key="post.Id" v-for="post of posts" class="shadow-4 bg-white rounded-5 mb-5 overflow-hidden">
     <div class="bg-image hover-overlay ripple w-100" data-ripple-color="light" style="border-bottom: 1px solid hsl(0, 0%, 95%)">
         <img src="https://mdbootstrap.com/api/snippets/static/screenshots/3695376.jpeg" class="img-fluid">
         <a href="/snippets/standard/marta-szymanska/3695376">
@@ -29,17 +30,34 @@
         <span class="me-2">2542<i class="fas fa-eye ms-1"></i></span>
         <span>12<i class="fas fa-thumbs-up ms-1"></i></span>
     </div>
+</div>
 </template>
 
 <script>
-
+import axios from 'axios'
 export default {
     name: "SingleHotNewsOtherPosts",
     components: {
 
     },
+    data(){
+        return{
+            posts: []
+        }
+    },
+    mounted(){
+        this.getPost()
+    },
+    methods: {
+        getPost(){
+            axios.get(`https://gorest.co.in/public/v2/posts`,)
+            .then((response) => {
+                return this.posts = response.data
+            })
+        }
+    },
     props: {
-        post: Object
+        // post: Object
     }
 }
 </script>

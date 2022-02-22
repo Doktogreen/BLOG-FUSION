@@ -1,5 +1,5 @@
 <template>
-    <form @submit="ceateTodo()" class="d-flex justify-content-center align-items-center mb-4">
+    <form @submit="createTodo()" class="d-flex justify-content-center align-items-center mb-4">
         <div class="form-outline flex-fill mx-3">
         <input type="text" v-model="title" id="form2" class="form-control" />
         <label class="form-label" for="form2">New task...</label>
@@ -12,26 +12,42 @@
     </form>
 </template>
 <script>
-
-// Vue.use(VueAxios, axios);
+import axios from 'axios'
 export default {
     name: "CreateTodoList",
     components:{
         
     },
     props: {
-        todo: Object
     },
     data(){
         return{
+            title: "",
+            status: "Completed",
+            due_on: "",
             todos: []
         }
     },
     methods: {
-        createTodo(data){
-          this.$emit("create-todo");
-          this.todos = [...this.todo, data ]
+        createTodo(){
+        let data = {
+            title: this.title,
+            due_on: this.due_on,
+            status: this.status
         }
+        const headers = {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+            Authorization: `Bearer 2c7c9f912de64d2f20d5f32900d25741f369f06a4f0b7b33657f46f9b928e792`
+        }
+        axios.post(`https://gorest.co.in/public/v2/users/100/todos`, data, {headers})
+            .then((response) => {
+                this.$emit("create-todo-done")
+                console.log(response.data)
+                return this.todos = [...this.todos, response.data]
+            })
+            
+    },
     }
 }
 </script>

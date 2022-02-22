@@ -16,7 +16,7 @@ const routes = [
     component: Register
   },
   {
-    path: '/login',
+    path: '/',
     name: 'Login',
     component: Login
   },
@@ -41,7 +41,7 @@ const routes = [
     component: Profile
   },
   {
-    path: '/',
+    path: '/feed',
     name: 'BlogFeed',
     component: BlogFeed
   },

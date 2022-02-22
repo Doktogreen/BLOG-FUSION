@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
       <div class="container-fluid">
         <!-- Navbar brand -->
-        <a style="width: 100px;" className='' href="/">
+        <a style="width: 100px;" className='' href="#/">
             <img style="width: inherit;" src="../assets/logowildfussion.png" />
         </a>
         <button @click="openSideBar()" class="navbar-toggler" type="button"
@@ -15,24 +15,27 @@
         <div class="collapse navbar-collapse" id="navbarExample01">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item active">
-              <a class="nav-link" aria-current="page" href="#intro">Home</a>
+              <a class="nav-link" aria-current="page" href="#/">Home</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" aria-current="page" href="#intro">Feed</a>
+              <a class="nav-link" aria-current="page" href="#/">Feed</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" rel="nofollow"
+              <a class="nav-link" href="#/profile" rel="nofollow"
                 >Profile</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" >Posts</a>
+              <a class="nav-link" href="#/allposts" >Posts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#/todo" >Todos</a>
             </li>
           </ul>
 
           <ul class="navbar-nav d-flex flex-row">
             <!-- Icons -->
             <li class="nav-item active">
-              <a class="nav-link" aria-current="page" href="#intro">Logout</a>
+              <a class="nav-link" aria-current="page" href="#/register">Logout</a>
             </li>
             <li class="nav-item me-3 me-lg-0">
               <a class="nav-link" href="https://www.youtube.com/channel/UC5CF7mLQZhvx8O5GODZAhdA" rel="nofollow"

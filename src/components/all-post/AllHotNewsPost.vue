@@ -1,4 +1,3 @@
-
 <template>
     <div class="row justify-content-between">
         <div class="overflow-y-scroll" style="max-height: 800px;">
@@ -6,7 +5,6 @@
         </div>
     </div>
 </template>
-
 <script>
 import axios from 'axios';
 import HotNewsOtherPosts from './HotNewsOtherPosts.vue';

@@ -10,9 +10,8 @@
             </div>
 
             <div class="profile-header-info">
-                <h4 class="m-t-sm">Clyde Stanley</h4>
-                <p class="m-b-sm">UXUI + Frontend Developer</p>
-                <a href="#" class="btn btn-xs btn-primary mb-2">Edit Profile</a>
+                <h4 class="m-t-sm">Teniola Apata</h4>
+                <p class="m-b-sm">Musician</p>
             </div>
         </div>
         <ul class="profile-header-tab nav nav-tabs">
@@ -54,11 +53,11 @@
                     <li class="title">PERSONAL INFORMATION</li>
                     <li>
                         <div class="field">Occupation:</div>
-                        <div class="value">UXUI / Frontend Developer</div>
+                        <div class="value">Musician</div>
                     </li>
                     <li>
                         <div class="field">Skills:</div>
-                        <div class="value">C++, PHP, HTML5, CSS, jQuery, MYSQL, Ionic, Laravel, Phonegap, Bootstrap, Angular JS, Angular JS, Asp.net</div>
+                        <div class="value">Singing, Guiter playing, Keyboard playing</div>
                     </li>
                     <li>
                         <div class="field">Birth of Date:</div>
@@ -66,7 +65,7 @@
                     </li>
                     <li>
                         <div class="field">Country:</div>
-                        <div class="value">San Francisco</div>
+                        <div class="value">Nigeria</div>
                     </li>
                     <li>
                         <div class="field">Address:</div>

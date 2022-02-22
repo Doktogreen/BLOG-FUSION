@@ -61,13 +61,15 @@
                     </label>
                     <br  />
                     <label class="form-check-label" for="form2Example3">
-                      Already have an account? <a href="/login">Login here</a>
+                      Already have an account? <a href="#/login">Login here</a>
                     </label>
                     </div>
                   </div>
 
                   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <button type="submit" class="btn btn-primary btn-lg">Register</button>
+                    <a href="#/login">
+                    <button type="submit" class="btn btn-primary btn-lg ">Register</button>
+                    </a>
                   </div>
 
                 </form>

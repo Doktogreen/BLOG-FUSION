@@ -1,5 +1,4 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
-import Home from '../views/Home.vue';
+import { createRouter, createWebHashHistory } from 'vue-router';
 import Register from '../components/Register.vue';
 import AllPost from '../components/all-post/AllHotNewsPost.vue';
 import PostContent from '../components/all-post/PostContent.vue';
@@ -8,6 +7,7 @@ import Profile from '../components/all-profile/Profile.vue';
 import TodoList from '../components/all-todos/TodoList.vue';
 import Login from '../components/Login.vue';
 import UserProfile from '../components/all-profile/UserProfile.vue';
+import Todo from '../components/all-todos/TodoList.vue';
 
 const routes = [
   {
@@ -19,6 +19,11 @@ const routes = [
     path: '/login',
     name: 'Login',
     component: Login
+  },
+  {
+    path: '/todo',
+    name: 'Todo',
+    component: Todo
   },
   {
     path: '/user-profile',
@@ -50,11 +55,6 @@ const routes = [
     name: 'AllPost',
     component: AllPost
   },
-  {
-    path: '/home',
-    name: 'Home',
-    component: Home
-  }
 ]
 
 const router = createRouter({

@@ -35,7 +35,7 @@
                         <div class="overflow-y-scroll" style="max-height: 500px;">
                         <ul :key="profile.id" v-for="profile in profiles" class="friend-list clearfix">
                             <li>
-                                <a href="#">
+                                <a href="#/user-profile">
                                     <div class="friend-img"><img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="" /></div>
                                     <div class="friend-info">
                                         <h4>{{profile.name}}</h4>

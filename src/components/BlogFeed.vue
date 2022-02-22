@@ -51,7 +51,7 @@
                 </div> 
                               
                 <all-hot-news-post />
-                <a class="btn btn-primary w-100 btn-rounded" href="..." role="button">See All Other Posts</a>
+                <a class="btn btn-primary w-100 btn-rounded" href="#/allposts" role="button">See All Other Posts</a>
             </section>
         </section>
     </div>

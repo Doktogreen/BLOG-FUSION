@@ -36,12 +36,14 @@
                       id="form2Example3c"
                     />
                     <label class="form-check-label" for="form2Example3">
-                      Don't have an account? <a href="/register">Register here</a>
+                      Don't have an account? <a href="#/register">Register here</a>
                     </label>
                   </div>
 
                   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <button type="button" class="btn btn-primary btn-lg">Login</button>
+                    <a href="#/">
+                    <button type="button" class="btn btn-primary btn-lg" >Login</button>
+                    </a>
                   </div>
 
                 </form>

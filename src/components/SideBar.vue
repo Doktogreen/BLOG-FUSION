@@ -3,7 +3,7 @@
                 <nav id="topbar">
                     <ul className="navbar-nav row justify-content-between pl-5 pr-5 theme-brand flex-row  text-center">
                         <li className="nav-item">
-                            <a style="width: 100px;" className='' href="/">
+                            <a style="width: 100px;" className='' href="#/">
                                 <img style="width: inherit;" src="../assets/logowildfussion.png" />
                             </a>
                         </li>
@@ -15,7 +15,7 @@
                     </ul>
                 <ul className="list-unstyled menu-categories sidebar-menu-categories" id="topAccordion">
                     <li className="menu single-menu active">
-                        <a href="/dashboard">
+                        <a href="#/">
                         <div className="nav-items">
                             <span>Home</span>
                         </div>
@@ -23,14 +23,14 @@
                     </li>
                     
                     <li className="menu single-menu">
-                        <a href="/trip">
+                        <a href="#/">
                             <div className="nav-items">
                                 <span>Feed</span>
                             </div>
                         </a>
                     </li>
                     <li className="menu single-menu">
-                        <a href="/invoice">
+                        <a href="#/profile">
                             <div className="nav-items">
                             
                                 <span>Profile </span>
@@ -38,7 +38,7 @@
                         </a>
                     </li>
                     <li className="menu single-menu">
-                        <a href="/reporting">
+                        <a href="#/allposts">
                             <div className="nav-items">
                             
                                 <span>Post</span>

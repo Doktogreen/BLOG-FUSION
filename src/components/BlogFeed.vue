@@ -21,13 +21,13 @@
                    <!-- Section: Content -->
                     <section>
                     <div id="gtm-content-others" class="position-relative" style="min-height:175px;margin-bottom: 1rem;">
-                        <a class="btn btn-primary btn-rounded col-12 mb-4" @click="toggleAddTodo()" role="button">CREATE TODO</a>
+                        <a class="btn background btn-rounded col-12 mb-4" @click="toggleAddTodo()" role="button">CREATE TODO</a>
                         <div v-show="addTodo">
                                 <create-todo-list />
                             </div> 
                         <a id="free2-cli-quick-start" target="_blank" href="https://youtu.be/pjjrk-W7cq4&amp;list=PLl1gkwYU90QkeAAHno3iVJokh2evwMwaX&amp;index=2" class="text-body">
                         
-                        <div style="height:176px" class="alert px-3 alert-light shadow-3 border border-danger overflow-hidden d-flex align-items-center ripple" role="alert" 
+                        <div style="height:176px; border: 1px solid #336799 !important;" class="alert px-3 alert-light shadow-3 border overflow-hidden d-flex align-items-center ripple" role="alert" 
                                 data-mdb-color="light">
                             
                             <div> 
@@ -51,7 +51,7 @@
                 </div> 
                               
                 <all-hot-news-post />
-                <a class="btn btn-primary w-100 btn-rounded" href="#/allposts" role="button">See All Other Posts</a>
+                <a class="btn background w-100 btn-rounded" href="#/allposts" role="button">See All Other Posts</a>
             </section>
         </section>
     </div>

@@ -1,95 +1,36 @@
 
 <template>
-  <section class="vh-100" style="background-color: #eee;">
-  <div class="container h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-lg-12 col-xl-11">
-        <div class="card text-black" style="border-radius: 25px;">
-          <div class="card-body p-md-5">
-            <div class="row justify-content-center">
-              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-                
-                <p class="text-center h5 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
-
-                <form @submit="createUser()" class="mx-1 mx-md-4">
-
-                  <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
-                    <div class="form-outline flex-fill mb-0">
-                      <input v-model="name" type="text" id="form3Example1c" class="form-control" />
-                      <label class="form-label" for="form3Example1c">Your Name</label>
-                    </div>
-                  </div>
-
-                  <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
-                    <div class="form-outline flex-fill mb-0">
-                      <input v-model="email" type="email" id="form3Example3c" class="form-control" />
-                      <label class="form-label" for="form3Example3c">Your Email</label>
-                    </div>
-                  </div>
-
-                  <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
-                    <div class="form-outline flex-fill mb-0">
-                      <select v-model="gender" type="text" id="form3Example4c" class="form-control">
-                        <option>Male</option>
-                        <option>Female</option>
-                      </select>
-                      <label class="form-label" for="form3Example4c">Your Gender</label>
-                    </div>
-                  </div>
-
-                  <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-key fa-lg me-3 fa-fw"></i>
-                    <div class="form-outline flex-fill mb-0">
-                      <input v-model="status" type="password" id="form3Example4cd" class="form-control" />
-                      <label class="form-label" for="form3Example4cd">password</label>
-                    </div>
-                  </div>
-
-                  <div class="form-check d-flex justify-content-center mb-5">
-                    <input
-                      class="form-check-input me-2"
-                      type="checkbox"
-                      value=""
-                      id="form2Example3c"
-                    />
-                    <div class="d-felx flex-direction-column">
-                    <label class="form-check-label" for="form2Example3">
-                      I agree all statements in <a href="#!">Terms of service</a>
-                    </label>
-                    <br  />
-                    <label class="form-check-label" for="form2Example3">
-                      Already have an account? <a href="#/login">Login here</a>
-                    </label>
-                    </div>
-                  </div>
-
-                  <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <a href="#/login">
-                    <button type="submit" class="btn btn-primary btn-lg ">Register</button>
-                    </a>
-                  </div>
-
-                </form>
-
-              </div>
-              <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-                <div>
-                <p class="text-center h4 fw-bold mb-5 mx-1 mx-md-4 mt-4">Welcome</p>
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp" class="img-fluid" alt="Sample image">
-                </div>
-              </div>
-            </div>
-          </div>
+  <!-- <section class="vh-100" style="background-color: #eee;"> -->
+  <div class="wrapper">
+    <div class="logo"> <img src="https://res.cloudinary.com/skiltime/image/upload/v1645686207/wildffff_zy9jvp.jpg" alt=""> </div>
+    <div class="text-center mt-4 name"> Fusion Blog </div>
+    <form v-on:submit.prevent="createUser()" class="p-3 mt-3">
+        <div class="form-field d-flex align-items-center"> 
+          <span class="far fa-user"></span> 
+          <input v-model="name" type="text" name="name" id="Name" placeholder="Name"> 
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+        <div class="form-field d-flex align-items-center"> 
+          <span class="far fa-user"></span> 
+          <input v-model="email" type="text" name="email" id="Email" placeholder="Email"> 
+        </div>
+        <div class="form-field d-flex align-items-center">
+          <span class="far fa-user"></span>   
+          <select v-model="gender" type="text" name="gender" id="pwd"> 
+            <option class="active">Gender</option>
+            <option>Male</option>
+            <option>Female</option>
+          </select>
+        </div> 
+        <div class="form-field d-flex align-items-center"> 
+          <span class="fas fa-key"></span>
+          <input  type="password" name="password" id="pwd" placeholder="Password"> 
+        </div>
+        <button type="submit" class="btn mt-3">Sign up</button>
+    </form>
+    <div class="text-center fs-6"> <a href="#">Have an account?</a> Just <a href="#/login">Login</a> </div>
+</div>
+<!-- </section> -->
 </template>
-
 <script>
 import axios from 'axios'
 export default {
@@ -101,7 +42,6 @@ export default {
       name: "",
       email:"",
       gender: "",
-      status: "active",
       user: []
     }
   },
@@ -113,15 +53,14 @@ export default {
         let data = {
             name: this.name,
             email: this.email,
-            gender: this.gender,
-            status: this.status
+            gender: this.gender
         }
         const headers = {
             Accept:"application/json",
              ContentType: "application/json",
-             Authorization: "Bearer 2c7c9f912de64d2f20d5f32900d25741f369f06a4f0b7b33657f46f9b928e792"
+             Authorization: "Bearer 68f97e578f94be80281510d3192602b6387e9faef957d2258a945ce0041be4dd"
         }
-        axios.post(`https://gorest.co.in/public/v2/users`, data, {headers})
+        axios.post(`https://gorest.co.in/public/v2/users`, {headers}, data)
             .then((response) => {
                 console.log(response.data)
                 return this.user = [...this.user, response.data]

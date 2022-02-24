@@ -3,19 +3,19 @@
     <hr class="m-0" />
     <div class="text-center py-4 align-items-center">
       <p>Fusion Blog on social media</p>
-      <a href="https://www.youtube.com/channel/UC5CF7mLQZhvx8O5GODZAhdA" class="btn btn-primary m-1" role="button"
+      <a href="https://www.youtube.com/channel/UC5CF7mLQZhvx8O5GODZAhdA" class="btn background m-1" role="button"
         rel="nofollow" target="_blank">
         <i class="fab fa-youtube"></i>
       </a>
-      <a href="https://www.facebook.com/iamfembi" class="btn btn-primary m-1" role="button" rel="nofollow"
+      <a href="https://www.facebook.com/iamfembi" class="btn background m-1" role="button" rel="nofollow"
         target="_blank">
         <i class="fab fa-facebook-f"></i>
       </a>
-      <a href="https://twitter.com/iamfembi" class="btn btn-primary m-1" role="button" rel="nofollow"
+      <a href="https://twitter.com/iamfembi" class="btn background m-1" role="button" rel="nofollow"
         target="_blank">
         <i class="fab fa-twitter"></i>
       </a>
-      <a href="https://github.com/Doktogreen" class="btn btn-primary m-1" role="button" rel="nofollow"
+      <a href="https://github.com/Doktogreen" class="btn background m-1" role="button" rel="nofollow"
         target="_blank">
         <i class="fab fa-github"></i>
       </a>

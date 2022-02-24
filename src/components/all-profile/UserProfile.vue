@@ -15,10 +15,8 @@
             </div>
         </div>
         <ul class="profile-header-tab nav nav-tabs">
-            <li class="nav-item"><a href="#profile-post" class="nav-link" data-toggle="tab">POSTS</a></li>
-            <li class="nav-item"><a href="#profile-about" class="nav-link" data-toggle="tab">ABOUT</a></li>
-            <li class="nav-item"><a href="#profile-photos" class="nav-link" data-toggle="tab">PHOTOS</a></li>
-            <li class="nav-item"><a href="#profile-videos" class="nav-link" data-toggle="tab">VIDEOS</a></li>
+            <li class="nav-item"><a href="#/allposts" class="nav-link" data-toggle="tab">POSTS</a></li>
+            <li class="nav-item"><a href="#/" class="nav-link" data-toggle="tab">FEED</a></li>
         </ul>
     </div>
 
@@ -32,12 +30,12 @@
                         <div class="overflow-y-scroll" style="max-height: 500px;">
                         <ul :key="post.id" v-for="post in posts" class="friend-list clearfix">
                             <li>
-                                <a href="#">
+                                <a href="#/post-content">
                                     <div class="friend-img"><img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="" /></div>
                                     <div class="friend-info">
                                         <h4>{{post.title}}...</h4>
                                         <p><b>Date : </b>11-23-2022</p>
-                                        <a href=".." style="color: blue;">Learn more</a>
+                                        <a href="#/post-content" style="color: blue;">Learn more</a>
                                     </div>
                                 </a>
                             </li>
@@ -89,8 +87,7 @@
     </div>
 </div>
 </div>
-
-    </div>
+</div>
 
 </template>
 <script>

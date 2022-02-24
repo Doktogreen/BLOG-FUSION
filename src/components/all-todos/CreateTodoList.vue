@@ -1,14 +1,15 @@
 <template>
-    <form @submit="createTodo()" class="d-flex justify-content-center align-items-center mb-4">
-        <div class="form-outline flex-fill mx-3">
-        <input type="text" v-model="title" id="form2" class="form-control" />
-        <label class="form-label" for="form2">New task...</label>
+    <form v-on:submit.prevent="createTodo()" class="d-flex justify-content-center align-items-center mb-4">
+        <div class="flex-fill mx-3">
+        <input type="text" v-model="title" placeholder="Todo name" class="form-control" />
         </div>
-        <div class="form-outline flex-fill">
-        <input type="text" v-model="due_on" id="form2" class="form-control" />
-        <label class="form-label" for="form2">Due date...</label>
+        <div class="flex-fill">
+        <input type="text" v-model="due_on"  placeholder="Due date" class="form-control" />
+        
         </div>
-        <button type="submit" class="btn btn-info ms-2">Add</button>
+        <button type="submit" class="btn btn-info background ms-2">
+            <p v-if="isSubmiting">Adding...</p><p v-if="!isSubmiting">Add</p>
+        </button>
     </form>
 </template>
 <script>
@@ -19,9 +20,11 @@ export default {
         
     },
     props: {
+        todo: Object
     },
     data(){
         return{
+            isSubmiting: false,
             title: "",
             status: "Completed",
             due_on: "",
@@ -35,18 +38,21 @@ export default {
             due_on: this.due_on,
             status: this.status
         }
-        const headers = {
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
-            Authorization: `Bearer 2c7c9f912de64d2f20d5f32900d25741f369f06a4f0b7b33657f46f9b928e792`
+         const headers = {
+            Accept:"application/json",
+             ContentType: "application/json",
+             Authorization: "Bearer 68f97e578f94be80281510d3192602b6387e9faef957d2258a945ce0041be4dd"
         }
+        this.isSubmiting = true;
+        setTimeout(() => {
+            this.isSubmiting= false;
+      }, 3000);
         axios.post(`https://gorest.co.in/public/v2/users/100/todos`, data, {headers})
             .then((response) => {
-                this.$emit("create-todo-done")
                 console.log(response.data)
                 return this.todos = [...this.todos, response.data]
             })
-            
+        this.$emit("get-todo");
     },
     }
 }

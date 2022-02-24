@@ -10,7 +10,7 @@
           <i class="fas fa-bars"></i>
         </button>
         <div v-if="sideBarOpen">
-        <side-bar :openSideBars="openSideBar" />
+        <side-bar @open-sidebar="openSideBar" />
         </div>
         <div class="collapse navbar-collapse" id="navbarExample01">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">

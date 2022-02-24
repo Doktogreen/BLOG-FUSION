@@ -17,15 +17,22 @@
                     <li className="menu single-menu active">
                         <a href="#/">
                         <div className="nav-items">
-                            <span>Home</span>
+                            <b>Home</b>
                         </div>
                         </a>
                     </li>
-                    
+                    <li className="menu single-menu">
+                        <a href="#/post-content">
+                            <div className="nav-items">
+                            
+                                <b>Comments</b>
+                            </div>
+                        </a>
+                    </li>
                     <li className="menu single-menu">
                         <a href="#/">
                             <div className="nav-items">
-                                <span>Feed</span>
+                                <b>Feed</b>
                             </div>
                         </a>
                     </li>
@@ -33,7 +40,7 @@
                         <a href="#/profile">
                             <div className="nav-items">
                             
-                                <span>Profile </span>
+                                <b>Profile </b>
                             </div>
                         </a>
                     </li>
@@ -41,20 +48,28 @@
                         <a href="#/allposts">
                             <div className="nav-items">
                             
-                                <span>Post</span>
+                                <b>Posts</b>
                             </div>
                         </a>
                     </li>
-                    
+
+                     <li className="menu single-menu">
+                        <a href="#/todo">
+                            <div className="nav-items">
+                            
+                                <b>Todos</b>
+                            </div>
+                        </a>
+                    </li>
+                    <li className="menu single-menu">
+                        <a type="button" @click="sideBarCloser()">
+                            <div className="nav-items">
+                                <b>Close</b>
+                            </div>
+                        </a>
+                    </li>
                 </ul>
-                <li className="menu single-menu">
-                <a @click="sideBarCloser()">
-                    <div className="nav-items">
-                    
-                        <span>Close</span>
-                    </div>
-                </a>
-                </li>
+                
             </nav>
         </div>
 </template>
@@ -70,9 +85,7 @@ export default {
     },
     methods: {
         sideBarCloser(){
-            if ( this.openSideBar ) {
-                this.openSideBar = false;
-            }
+            this.$emit("open-sidebar")
         }
     }
 }

@@ -12,7 +12,6 @@ export default {
         SingleNewsPost
 
     },
-    props: {
-    }
+    props: {}
 }
 </script>

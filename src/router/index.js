@@ -1,7 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
 import Register from '../components/Register.vue';
-import AllPost from '../components/all-post/AllHotNewsPost.vue';
-import PostContent from '../components/all-post/PostContent.vue';
+import AllPosts from '../components/all-post/AllPosts.vue';
+import PostContent from '../components/all-post/AllPosts.vue';
 import BlogFeed from '../components/BlogFeed.vue';
 import Profile from '../components/all-profile/Profile.vue';
 import TodoList from '../components/all-todos/TodoList.vue';
@@ -20,6 +20,7 @@ const routes = [
     name: 'Login',
     component: Login
   },
+
   {
     path: '/todo',
     name: 'Todo',
@@ -52,8 +53,8 @@ const routes = [
   },
   {
     path: '/allposts',
-    name: 'AllPost',
-    component: AllPost
+    name: 'AllPosts',
+    component: AllPosts
   },
 ]
 

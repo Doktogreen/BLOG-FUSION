@@ -10,18 +10,14 @@
             </div>
 
             <div class="profile-header-info">
-                <h4 class="m-t-sm">Clyde Stanley</h4>
+                <h4 class="m-t-sm">Ayomide Raphael</h4>
                 <p class="m-b-sm">UXUI + Frontend Developer</p>
-                <a href="#" class="btn btn-xs btn-primary mb-2">Edit Profile</a>
             </div>
         </div>
         <ul class="profile-header-tab nav nav-tabs">
-            <li class="nav-item"><a href="#profile-post" class="nav-link" data-toggle="tab">POSTS</a></li>
-            <li class="nav-item"><a href="#profile-post" class="nav-link" data-toggle="tab">TODOS</a></li>
-            <li class="nav-item"><a href="#profile-about" class="nav-link" data-toggle="tab">ABOUT</a></li>
-            <li class="nav-item"><a href="#profile-photos" class="nav-link" data-toggle="tab">PHOTOS</a></li>
-            <li class="nav-item"><a href="#profile-videos" class="nav-link" data-toggle="tab">VIDEOS</a></li>
-            <li class="nav-item"><a href="#profile-friends" class="nav-link active show" data-toggle="tab">USERS</a></li>
+            <li class="nav-item"><a href="#/allposts" class="nav-link" data-toggle="tab">POSTS</a></li>
+            <li class="nav-item"><a href="#/todo" class="nav-link" data-toggle="tab">TODOS</a></li>
+            <li class="nav-item"><a href="#/" class="nav-link active show" data-toggle="tab">FEED</a></li>
         </ul>
     </div>
 
@@ -61,7 +57,7 @@
                     </li>
                     <li>
                         <div class="field">Skills:</div>
-                        <div class="value">C++, PHP, HTML5, CSS, jQuery, MYSQL, Ionic, Laravel, Phonegap, Bootstrap, Angular JS, Angular JS, Asp.net</div>
+                        <div class="value">JAVASCRIPT, REACTJS, VUEJS, HTML5, CSS, jQuery, MYSQL, Bootstrap, Angular JS, Angular JS, Asp.net</div>
                     </li>
                     <li>
                         <div class="field">Birth of Date:</div>
@@ -111,7 +107,12 @@ export default {
         }
     },
     mounted() {
-        axios.get(`https://gorest.co.in/public/v2/users`)
+        const headers = {
+            Accept:"application/json",
+             ContentType: "application/json",
+             Authorization: "Bearer 68f97e578f94be80281510d3192602b6387e9faef957d2258a945ce0041be4dd"
+        }
+        axios.get(`https://gorest.co.in/public/v2/users`, {headers})
             .then((response) => {
                 this.profiles = response.data
             })

@@ -14,7 +14,6 @@
 </div>
 </template>
 <script>
-import axios from 'axios'
 export default {
     name: "SingleNewsPost",
     components: {
@@ -22,26 +21,11 @@ export default {
     },
     data(){
         return{
-        posts: []
         }
     },
     props: {
+        posts: Object
     },
-    mounted() {
-        this.getPost()
-    },
-    methods: {
-        getPost(){
-        const headers = {
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
-            Authorization: `Bearer 2c7c9f912de64d2f20d5f32900d25741f369f06a4f0b7b33657f46f9b928e792`
-        }
-        axios.get(`https://gorest.co.in/public/v2/users/100/posts`, {headers})
-        .then((response) => {
-            return this.posts = response.data
-        })
-    },
-    }
+    
 }
 </script>

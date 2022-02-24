@@ -2,17 +2,15 @@
     <section>
             <p class="text-center"><strong>Create a Post</strong></p>
 
-            <form @submit="createPost()">
+            <form v-on:submit.prevent="createPost()">
               <!-- Name input -->
-              <div class="form-outline mb-4">
-                <input v-model="title" type="text" id="form4Example1" class="form-control" />
-                <label class="form-label" for="form4Example1">Title</label>
+              <div class=" mb-4">
+                <input v-model="title" type="text" placeholder="Post title" id="form4Example1" class="form-control" />
               </div>
 
               <!-- Message input -->
-              <div class="form-outline mb-4">
-                <textarea v-model="body" class="form-control" id="form4Example3" rows="4"></textarea>
-                <label class="form-label" for="form4Example3">Text</label>
+              <div class=" mb-4">
+                <textarea v-model="body" placeholder="Type your post content here" class="form-control" id="form4Example3" rows="4"></textarea>
               </div>
 
               <!-- Checkbox -->
@@ -24,8 +22,8 @@
               </div>
 
               <!-- Submit button -->
-              <button type="submit" class="btn btn-primary btn-block mb-4">
-                Publish
+              <button type="submit" class="btn row d-flex background btn-block mb-4">
+                <p v-if="isSubmiting">Please wait...</p><p v-if="!isSubmiting">Publish</p>
               </button>
             </form>
           </section>
@@ -40,8 +38,12 @@ export default {
     },
     props: {
     },
+    mounted(){
+      
+    },
     data(){
         return{
+          isSubmiting: false,
           title: "",
           body: "",
           posts: []
@@ -54,14 +56,18 @@ export default {
             body: this.body
         }
         const headers = {
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
-            Authorization: `Bearer 2c7c9f912de64d2f20d5f32900d25741f369f06a4f0b7b33657f46f9b928e792`
+            Accept:"application/json",
+             ContentType: "application/json",
+             Authorization: "Bearer 68f97e578f94be80281510d3192602b6387e9faef957d2258a945ce0041be4dd"
         }
+        this.isSubmiting = true;
+        setTimeout(() => {
+          this.isSubmiting= false;
+      }, 3000);
         axios.post(`https://gorest.co.in/public/v2/users/100/posts`, data, {headers})
             .then((response) => {
                 console.log(response.data)
-                return this.posts = [...this.posts, response.data]
+                return this.todos = [...this.todos, response.data]
             })
             this.$emit("get-post")
     }

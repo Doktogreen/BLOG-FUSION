@@ -1,7 +1,7 @@
 <template>
-<div class="d-flex justify-content-between p-3 row col-12 w-100">
+<div class="p-3 row all-post-cover col-12 w-100">
 <div class="all-post col-4 mt-5 col-sm-12 mb-5">
-    <div v-for="(item, i) in filterItems" :key="i" class="shadow-4 rounded-5 mb-2 overflow-hidden">
+    <div v-for="(item, i) in filterItems" :key="i" class="shadow-4 rounded-5 mb-2 post overflow-hidden">
     <div style="margin-right: 20px !important;" class="post-item">
     <div class="bg-image hover-overlay ripple w-100" data-ripple-color="light" style="border-bottom: 1px solid hsl(0, 0%, 95%)">
         <img src="https://mdbootstrap.com/api/snippets/static/screenshots/3695376.jpeg" class="img-fluid">

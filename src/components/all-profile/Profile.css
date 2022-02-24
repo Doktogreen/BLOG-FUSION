@@ -471,11 +471,18 @@ SIDEBAR
 .all-post {
     display: flex !important;
     flex-direction: row !important;
-    flex-wrap: nowrap !important;
     max-width: 100% !important;
 }
-@media only screen and (max-width: 769px) {
-    .post-item {
+@media only screen and (max-width: 600px) {
+    .all-post {
+        flex-wrap: wrap !important;
+        width: 100% !important;
+    }
+    .all-post-cover {
+        padding-right: 0px !important;
+        margin-right: 0px !important;
+    }
+    .div.rounded-5.mb-2.post.overflow-hiden {
         max-width: 100% !important;
     }
 }
